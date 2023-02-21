@@ -16,18 +16,23 @@ namespace Anagrams.Tests
 
     [TestMethod]
 
-    public void IsAnagrams_ReturnsFalseIfNotAnagrams()
+    public void IsAnagrams_ReturnsFalseIfNotAnagrams_Bool()
     {
-      AnagramsFinder theFalseReturn = new AnagramsFinder();
-      Assert.AreEqual(false, theFalseReturn.IsAnagrams("pizza", "beard")); 
+      Assert.AreEqual(false, AnagramsFinder.IsAnagrams("pizza", "beard")); 
     }
 
     [TestMethod]
 
-    public void IsAnagrams_ReturnsTrueIfAnagrams()
+    public void IsAnagrams_ReturnsTrueIfAnagrams_Bool()
     {
-      AnagramsFinder aFinder = new AnagramsFinder();
-      Assert.AreEqual(true, aFinder.IsAnagrams("beard", "bread"));
+      Assert.AreEqual(true, AnagramsFinder.IsAnagrams("beard", "bread"));
+    }
+
+    [TestMethod]
+
+    public void IsAnagrams_ReturnsFalseIfLengthsAreDifferent_Bool()
+    {
+      Assert.AreEqual(false, AnagramsFinder.IsAnagrams("racecar", "rracecar"));
     }
   }
 }
