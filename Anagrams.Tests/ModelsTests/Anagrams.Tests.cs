@@ -13,6 +13,14 @@ namespace Anagrams.Tests
       AnagramsFinder theAnagrams = new AnagramsFinder();
       Assert.AreEqual(typeof(AnagramsFinder), theAnagrams.GetType());
     }
-    
+
+    [TestMethod]
+
+    public void IsAnagrams_ReturnsFalseIfNotAnagrams()
+    {
+      AnagramsFinder theFalseReturn = new AnagramsFinder();
+      Assert.AreEqual(false, theFalseReturn.IsAnagrams("pizza"));
+      
+    }
   }
 }
